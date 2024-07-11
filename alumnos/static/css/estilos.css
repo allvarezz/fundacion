@@ -54,3 +54,8 @@ nav  div  ul  li a:hover{
     color: black !important;
     border-radius: 5px !important;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+}

@@ -3,26 +3,26 @@
 
 {% block titulo  %} Add paciente{% endblock %}
 {% block contenido %}
-    <div style="text-align: center;">
+    
         <h2 class="mt-5"> Formulario Agregar Paciente</h2><br><br>
-        <form action="{% url 'paciente_add' %}" method="POST">
+        <form action="{% url 'paciente_add' %}" method="POST" class="container py-5 col-lg-5 bg-dark">
             {% csrf_token %}
-            <pre>Rut: <input class="col-lg-5" type="text" name="rut" ></pre>
-            <pre>Nombre: <input class="col-lg-5" type="text" name="nombre" ></pre>
-            <pre>Apellido P: <input class="col-lg-5" type="text" name="paterno" ></pre>
-            <pre>Apellido M: <input class="col-lg-5" type="text" name="materno"></pre>
-            <pre>Fecha NAC: <input class="col-lg-5" type="date" name="fechaNac" ></pre>
-            <pre>Genero: 
+            <input class="col-lg-12 my-2" type="text" name="rut" placeholder="Ingrese su Rut" >
+            <input class="col-lg-12 my-2" type="text" name="nombre"  placeholder="ingrese Nombre">
+            <input class="col-lg-12 my-2" type="text" name="paterno" placeholder="Ingrese apellido paterno">
+            <input class="col-lg-12 my-2" type="text" name="materno" placeholder="Ingrese apellido Materno">
+             <input class="col-lg-12 my-2" type="date" name="fechaNac" >
+    
                 <select name="genero">
                     {% for genero in generos %}
                         <option value="{{ genero.id_genero }}">{{ genero.genero }}</option>
                     {% endfor %}
                 </select>
-            </pre>
-            <pre>Celular: <input class="col-lg-5" type="text" name="telefono"></pre>
-            <pre>Email: <input class="col-lg-5" type="email" name="email" ></pre>
-            <pre>Direccion: <input class="col-lg-5" type="text" name="direccion" ></pre>
-            <input class="col-lg-5" type="submit" name="opcion" value="Agregar">
+            
+            <input class="col-lg-12 my-2" type="text" name="telefono" placeholder="Ingrese su telefono">
+            <input class="col-lg-12 my-2" type="email" name="email" placeholder="Ingrese su Correo" >
+            <input class="col-lg-12 my-2" type="text" name="direccion"  placeholder="Ingrese su Direccion ">
+            <input class="col-lg-2 btn btn-warning" type="submit" name="opcion" value="Agregar">
         </form><br><br>
         <a href="{% url 'paciente_list' %}">Volver</a><br>
         {% if mensaje %}
@@ -32,6 +32,6 @@
            
         </div>
         {% endif %}
-    </div>
+    
     {% endblock %}
 
