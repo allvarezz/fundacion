@@ -1,0 +1,47 @@
+
+{% extends 'alumnos/base.html'  %}
+{% load static %}
+
+
+{% block css  %} 
+
+
+{% endblock %}
+    {% block contenido %}
+    
+    <h1>Listado Paciente</h1>
+    <br>
+    <div class="container">
+        <table class="table table-sm table-hover">
+            
+                <thead>
+                    <tr>
+                        
+                    <th>Rut</th>
+                    <th>Nombres</th>
+                    <th>Feccha Nacimiento</th>
+                    <th>Email</th>
+                    <th>direccion</th>
+
+                    </tr>
+                </thead>
+           
+                <tbody>
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td> {{ alumno.rut }}</td>
+                        <td> {{ alumno.nombre }}{{ alumno.apellido_paterno }}
+                            {{ alumno.apellido_materno }},</td>
+                            <td> {{ alumno.fecha_nacimiento }}</td>
+                            <td>{{ alumno.email }}</td>
+                            <td>{{ alumno.direccion }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            
+       
+        
+    </table>
+    </div>
+    {% endblock  %}
+

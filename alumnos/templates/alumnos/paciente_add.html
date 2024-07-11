@@ -1,0 +1,33 @@
+{% extends 'alumnos/base.html'  %}
+{% load static %}
+{% block contenido %}
+    <div style="text-align: center;">
+        <h2 class="mt-5"> Formulario Agregar Paciente</h2><br><br>
+        <form action="{% url 'paciente_add' %}" method="POST">
+            {% csrf_token %}
+            <pre>Rut: <input class="col-lg-5" type="text" name="rut" ></pre>
+            <pre>Nombre: <input class="col-lg-5" type="text" name="nombre" ></pre>
+            <pre>Apellido P: <input class="col-lg-5" type="text" name="paterno" ></pre>
+            <pre>Apellido M: <input class="col-lg-5" type="text" name="materno"></pre>
+            <pre>Fecha NAC: <input class="col-lg-5" type="date" name="fechaNac" ></pre>
+            <pre>Genero: 
+                <select name="genero">
+                    {% for genero in generos %}
+                        <option value="{{ genero.id_genero }}">{{ genero.genero }}</option>
+                    {% endfor %}
+                </select>
+            </pre>
+            <pre>Celular: <input class="col-lg-5" type="text" name="telefono"></pre>
+            <pre>Email: <input class="col-lg-5" type="email" name="email" ></pre>
+            <pre>Direccion: <input class="col-lg-5" type="text" name="direccion" ></pre>
+            <input class="col-lg-5" type="submit" name="opcion" value="Agregar">
+        </form><br><br>
+        <a href="{% url 'paciente_list' %}">Volver</a><br>
+        <div id="idMensajes">
+            {% if mensaje %}
+                <p class="alert">{{ mensaje }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+

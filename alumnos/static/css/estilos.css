@@ -1,0 +1,56 @@
+body{
+    padding: 2% 0;
+    background: rgb(53, 168, 124);
+    text-align: center;
+}
+td:hover{
+    background: yellowgreen;
+}
+tr:hover{
+
+    background: rgba(121, 119, 119, 0.479);
+}
+h1,form{
+    margin-top: 1%;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+}
+#acceso{
+    position: absolute;
+    height: 100%;
+    top: 5px;
+    right: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#acceso{
+    position: absolute;
+    top: 5px;
+}
+#idMensajes{
+    padding: 50px;
+    border-radius: 20px;
+    background: green;
+    color: white;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+
+}
+nav  div  ul  li a{
+    transition: all 60ms ease-in-out;
+}
+nav  div  ul  li:hover{
+    background: yellow;
+    border-radius: 5px !important;
+}
+nav  div  ul  li a:hover{
+    background: yellow;
+    color: black !important;
+    border-radius: 5px !important;
+}

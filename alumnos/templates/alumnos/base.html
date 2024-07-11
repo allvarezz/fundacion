@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static '/css/estilos.css'  %}">
+    {% block css  %} {% endblock %}
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-warning text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="{% url 'index'%}">Fundacion</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="{% url 'index'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'paciente_list'%}">Paciente</a>
+              </li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item" id="acceso">
+              <p class="nav-link ">Bienvenido {{user.username}}</p>
+              <a href="{% url 'salir' %}">Salir</a>
+            </li>
+            {% else  %}
+            <li class="nav-item" id="acceso">
+              <p class="nav-link ">Bienvenido</p>
+            </li>
+            {% endif %}
+             
+           
+          </div>
+        </div>
+      </nav>
+
+    {% block contenido %}
+
+    {% endblock  %}
+    
+    <script defer src="{% static '/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

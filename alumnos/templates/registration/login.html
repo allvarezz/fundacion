@@ -1,0 +1,19 @@
+{% extends 'alumnos/base.html' %}
+
+{% block contenido %}
+<h1>Fundacion</h1>
+<form method="post" class="card container my-4 col-lg-5  bg-dark">
+    {% csrf_token  %}
+
+    <input type="text" name="username" placeholder="Nombre usuario" class="my-4 fs-5 mx-5">
+    <input type="password" name="password" placeholder="contraseña" class="my-4 mx-5">
+
+    <button type="submit" class="btn btn-warning my-4 mx-5">Login</button>
+
+</form>
+
+    {% endblock  %}
+
+
+
+
