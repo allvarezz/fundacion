@@ -1,3 +1,4 @@
+
 body{
     padding: 2% 0;
     background: rgb(53, 168, 124);
@@ -58,4 +59,8 @@ nav  div  ul  li a:hover{
 form{
     display: flex;
     flex-direction: column;
+    color: white !important;
+}
+form > pre{
+    color: white;
 }
