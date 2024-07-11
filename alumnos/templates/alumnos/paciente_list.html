@@ -7,9 +7,9 @@
 
     <h1>Editar Datos del Paciente</h1><br><br>
     
-    <button type="button">
-        <a href="{% url 'paciente_add' %}" class="btn btn-warning"> Agregar</a>
-    </button>
+    
+        <a href="{% url 'paciente_add' %}" class="btn btn-warning my-5"> Agregar</a>
+ 
     {% if mensaje %}
     <div id="idMensajes">
         
@@ -17,7 +17,7 @@
             
     </div>
     {% endif %}
-    <table class="table">
+    <table class="table container bg-dark text-white">
         {% if alumnos %}
             <th>Rut</th>
             <th>Nombre</th>
@@ -29,8 +29,8 @@
                     <td>{{ x.rut}} 
                     <td>{{ x.nombre}} 
                     <td>{{ x.apellido_paterno}} 
-                    <td> <a href="{% url 'paciente_del' pk=x.rut %} " >Eliminar</a>
-                    <td> <a href="{% url 'paciente_findEdit' pk=x.rut %} ">Modificar</a>
+                    <td> <a href="{% url 'paciente_del' pk=x.rut %} " class="btn btn-danger">Eliminar</a>
+                    <td> <a href="{% url 'paciente_findEdit' pk=x.rut %} " class="btn btn-warning">Modificar</a>
                 </tr>
             {% endfor %}
         {% endif %}      

@@ -23,7 +23,7 @@ li{
 #acceso{
     position: absolute;
     height: 100%;
-    top: 5px;
+    top: 1px;
     right: 90px;
     display: flex;
     flex-direction: row;
@@ -32,6 +32,15 @@ li{
 #acceso{
     position: absolute;
     top: 5px;
+}
+#acceso a {
+    position: absolute;
+    top: 0;
+    right: -80px;
+}
+nav > #acesso > p{
+    color: red;
+    padding: 5px;
 }
 #idMensajes{
     padding: 50px;
@@ -45,6 +54,7 @@ li{
 }
 nav  div  ul  li a{
     transition: all 60ms ease-in-out;
+    
 }
 nav  div  ul  li:hover{
     background: yellow;
@@ -60,7 +70,4 @@ form{
     display: flex;
     flex-direction: column;
     color: white !important;
-}
-form > pre{
-    color: white;
 }

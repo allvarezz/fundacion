@@ -9,29 +9,32 @@
         <h2>Formulario Actualización Datos</h2><br><br>
         <form action="{% url 'pacienteUpdate' %}" method="POST" class="container py-5 col-lg-5 bg-dark text-white" >
             {% csrf_token %}
-            <label for="rut">
+            <label for="rut" class="col-lg-12">
                 Rut
                 <input id="rut" class="col-lg-10" type="text" name="rut" value="{{ alumno.rut }}">
 
             </label>
-            <label for="name">
+            <label for="name" class="col-lg-12">
                 Nombre
                 <input class="col-lg-10" id="name" type="text" name="nombre" value="{{ alumno.nombre }}">
             </label>
 
-            <label for="">
-                <input  type="text" name="paterno" value="{{ alumno.apellido_paterno }}">
+            <label for="" class="col-lg-12">
+                Apellido Paterno
+                <input  class="col-lg-10"  type="text" name="paterno" value="{{ alumno.apellido_paterno }}">
 
             </label>
-            <label for="">
-                <input  type="text" name="materno" value="{{ alumno.apellido_materno }}">
+            <label for="" class="col-lg-12">Apellido Materno
+                <input  class="col-lg-9"  type="text" name="materno" value="{{ alumno.apellido_materno }}">
 
             </label>
-            <label for="">
-                <input  type="date" name="fechaNac" value="{{ alumno.fecha_nacimiento|date:'Y-m-d' }}">
+            <label for="" class="col-lg-12">
+                Nacimiento
+                <input class="col-lg-10" type="date" name="fechaNac" value="{{ alumno.fecha_nacimiento|date:'Y-m-d' }}">
             </label>
-            <label for="">
-                <select name="genero">
+            <label for="" class="col-lg-12">
+                Genero
+                <select name="genero" class="col-lg-10">
                     {% for genero in generos %}
                         {% if genero.genero == alumno.id_genero.genero %}
                             <option value="{{ genero.id_genero }}" selected>{{ genero.genero }}</option>
@@ -42,15 +45,18 @@
                 </select>
 
             </label>
-            <label for="">
-                <input class="col-lg-5" type="text" name="telefono" value="{{ alumno.telefono }}">
+            <label for=""  class="col-lg-12">
+                N° Telefono
+                <input  class="col-lg-10"  type="text" name="telefono" value="{{ alumno.telefono }}">
 
             </label>
-            <label for="">
-                <input class="col-lg-5" type="email" name="email" value="{{ alumno.email }}">
+            <label for="" class="col-lg-12">
+                Correo
+                <input  class="col-lg-10"  type="email" name="email" value="{{ alumno.email }}">
             </label>
-            <label for="">
-                <input class="col-lg-5" type="text" name="direccion" value="{{ alumno.direccion }}">
+            <label for="" class="col-lg-12">
+                Direccion
+                <input  class="col-lg-10"  type="text" name="direccion" value="{{ alumno.direccion }}">
             </label>
             <input class="col-lg-5 btn btn-warning" type="submit" name="opcion" value="Actualizar">
         </form><br><br>
