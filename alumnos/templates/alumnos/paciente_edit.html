@@ -28,11 +28,14 @@
             <input class="col-lg-5" type="submit" name="opcion" value="Actualizar">
         </form><br><br>
         {% endif %}
+        {% if mensaje %}
         <div id="idMensajes">
-            {% if mensaje %}
+           
             <p class="alert">{{ mensaje }}</p>
+        
+        </div>
         {% endif %}
-        </div><br><br>
+        <br><br>
         <a href="{% url 'paciente_list' %}">Volver</a>
     </div>
 {%endblock %}
