@@ -7,12 +7,13 @@
     <button type="button">
         <a href="{% url 'paciente_add' %}" class="btn btn-warning"> Agregar</a>
     </button>
-
+    {% if mensaje %}
     <div id="idMensajes">
-        {% if mensaje %}
+        
                 <p class="alert">{{ mensaje }}</p>
-            {% endif %}
+            
     </div>
+    {% endif %}
     <table class="table">
         {% if alumnos %}
             <th>Rut</th>
